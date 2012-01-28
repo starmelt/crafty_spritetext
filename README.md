@@ -1,0 +1,1 @@
+Component for the CraftyJS Framework that displays text in a sprite font (pixel font).
