@@ -8,7 +8,7 @@ window.onload = (function() {
     // Initialize Crafty
     Crafty.init(WIDTH, HEIGHT);
     
-    Crafty.modules('http://cdn.craftycomponents.com/', { SpriteText: 'release' }, function () {
+    Crafty.modules('http://cdn.craftycomponents.com/', { SpriteText: '0.2' }, function () {
         Crafty.load([FONT_BLUE_BUBBLE, FONT_SYNTAX_TERROR, FONT_TSK06], // preload images
             function() {
                 // Write some Text (Canvas) using the BlueBubble Font (16x16)
