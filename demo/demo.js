@@ -79,7 +79,8 @@ window.onload = (function() {
                 // Add the Mouse Component and change text and font on Click
                 text5.addComponent("Mouse");
                 text5.bind("Click", function (e) {
-                    text5.attr({z: -1});
+                    text5.attr({z: 0});
+                    text6.attr({z: 1});
                 });
                 
                 // Write some Text (DOM) using the SyntaxTerror Font (32x32)
@@ -91,7 +92,8 @@ window.onload = (function() {
                             .text(txt6);
                 text6.addComponent("Mouse");
                 text6.bind("Click", function (e) {
-                    text5.attr({z: 2});
+                    text5.attr({z: 1});
+                    text6.attr({z: 0});
                 });
             }
         );
