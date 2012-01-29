@@ -40,7 +40,7 @@ Crafty.c("SpriteText", {
                     chExists = this.charName(this._font, l) in Crafty.components(); // check if letter exists in Sprite
                     ch = chExists ? l : l.toUpperCase(); // if letter does not exist, try uppercase
                     e = Crafty.e("2D, " + type + ", " + this.charName(this._font, ch)) // create entity for the letter
-                            .attr({x: posx, y: this.y, w: tileSize, h: tileSize});
+                            .attr({x: posx, y: this.y, z: this.z, w: tileSize, h: tileSize});
                     this._entities.push(e);
                 }
             }
