@@ -1,18 +1,21 @@
 window.onload = (function() {
     var WIDTH = 800,
-        HEIGHT = 640;
+        HEIGHT = 640,
+        FONT_BLUE_BUBBLE = "http://starmelt.github.com/craftyjstut/img/BlueBubbleFont.png",
+        FONT_SYNTAX_TERROR = "http://starmelt.github.com/craftyjstut/img/OSDM_Fnt32x32_SyntaxTerror-Copy2.png",
+        FONT_TSK06 = "http://starmelt.github.com/craftyjstut/img/TSK06.png";
+
     // Initialize Crafty
     Crafty.init(WIDTH, HEIGHT);
 
-    Crafty.load(["img/BlueBubbleFont.png", "img/OSDM_Fnt32x32_SyntaxTerror-Copy2.png",
-                 "img/TSK06.png"], // preload images
+    Crafty.load([FONT_BLUE_BUBBLE, FONT_SYNTAX_TERROR, FONT_TSK06], // preload images
         function() {
             // Write some Text (Canvas) using the BlueBubble Font (16x16)
             var txt1 = "BlueBubble!";
             var ts1 = 16;
             var text1 = Crafty.e("2D, Canvas, SpriteText")
                         .attr({x: 0, y: 0, w: txt1.length*ts1, h: ts1})
-                        .registerFont("BlueBubble", ts1, "img/BlueBubbleFont.png")
+                        .registerFont("BlueBubble", ts1, FONT_BLUE_BUBBLE)
                         .text(txt1);
             
             // Add the Mouse Component and change text on Click
@@ -22,11 +25,11 @@ window.onload = (function() {
             });
             
             // Write some Text (Canvas) using the SyntaxTerror Font (32x32)
-            var txt2 = "SyntaxTerror (Canvas)!";
+            var txt2 = "SyntaxTerror Font (Canvas)!";
             var ts2 = 32;
             var text2 = Crafty.e("2D, Canvas, SpriteText, Color")
                         .attr({x: 0, y: 100, w: txt2.length*ts2 + 100, h: ts2})
-                        .registerFont("SyntaxTerror", ts2, "img/OSDM_Fnt32x32_SyntaxTerror-Copy2.png")
+                        .registerFont("SyntaxTerror", ts2, FONT_SYNTAX_TERROR)
                         .text(txt2)
                         .color("yellow");
                         
@@ -37,7 +40,7 @@ window.onload = (function() {
             });
                 
             // Write some Text (DOM) using the SyntaxTerror Font (32x32)
-            var txt3 = "SyntaxTerror (DOM)!";
+            var txt3 = "SyntaxTerror Font (DOM)!";
             var ts3 = 32;
             var text3 = Crafty.e("2D, DOM, SpriteText")
                         .attr({x: 0, y: 200, w: txt3.length*ts3, h: ts3})
@@ -55,7 +58,7 @@ window.onload = (function() {
             var ts4 = 32;
             var text4 = Crafty.e("2D, DOM, SpriteText")
                         .attr({x: 0, y: 300, w: txt4.length*ts4, h: ts4})
-                        .registerFont("TSK06", ts4, "img/TSK06.png", "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.\"-")
+                        .registerFont("TSK06", ts4, FONT_TSK06, "ABCDEFGHIJKLMNOPQRSTUVWXYZ!.\"-")
                         .text(txt4);
                         
             // Add the Mouse Component and change text and font on Click
