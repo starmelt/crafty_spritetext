@@ -2,7 +2,7 @@
 * SpriteText Component for CraftyJS
 * https://github.com/starmelt/crafty_spritetext
 *
-* Copyright 2011 by starmelt. 
+* Copyright 2012 by starmelt. 
 * Licensed under the MIT license.
 */
 
@@ -17,10 +17,10 @@ Crafty.c("SpriteText", {
     _registeredSpriteFonts: {},
     
     init: function() {
-        this.bind("EnterFrame", function(obj) {
+        this.bind("Change", function(obj) {
             var tileSize = this._registeredSpriteFonts[this._font],
                 txt, l, pos, type, e, chExists, ch, startx, textwidth;
-            if (tileSize && this._changed) {
+            if (tileSize && this._text && this._changed) {
                 txt = this._text.split(""); // String to Array
                 // destroy entities from previous rendering
                 for (i in this._entities) {
@@ -36,7 +36,7 @@ Crafty.c("SpriteText", {
                 for (i in txt) {
                     l = txt[i];
                     posx = startx + i * tileSize;
-                    type = obj.type === "DOM" ? "DOM" : "Canvas";
+                    type = this.has("DOM") ? "DOM" : "Canvas";
                     chExists = this.charName(this._font, l) in Crafty.components(); // check if letter exists in Sprite
                     ch = chExists ? l : l.toUpperCase(); // if letter does not exist, try uppercase
                     e = Crafty.e("2D, " + type + ", " + this.charName(this._font, ch)) // create entity for the letter
