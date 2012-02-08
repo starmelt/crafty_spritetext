@@ -19,7 +19,7 @@ Crafty.c("SpriteText", {
     init: function() {
         this.bind("Change", function(obj) {
             var tileSize = this._registeredSpriteFonts[this._font],
-                txt, l, pos, type, e, chExists, ch, startx, textwidth;
+                txt, l, posx, i, type, e, chExists, ch, startx, textwidth;
             if (tileSize && this._text && this._changed) {
                 txt = this._text.split(""); // String to Array
                 // destroy entities from previous rendering
