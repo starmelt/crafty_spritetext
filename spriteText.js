@@ -12,7 +12,7 @@
  * A Component that draws Text using a SpriteFont. Works on Canvas and DOM!
  */
 Crafty.c("SpriteText", {
-    _defaultMapping: " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_´" +
+    _defaultMapping: " !\"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\\]^_`" +
                         "abcdefghijklmnopqrstuvwxyz{|}~", // ASCII Characters 32-126
     _registeredSpriteFonts: {},
     
